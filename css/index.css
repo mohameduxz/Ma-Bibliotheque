@@ -460,6 +460,9 @@
     #subscribe>p#contenue, #subscribe>form{
         width: 90% !important;
     }
+    #banner #titre{
+        font-size: 2em;
+    }
 }
 div.btn-div{
     height: 30px;
