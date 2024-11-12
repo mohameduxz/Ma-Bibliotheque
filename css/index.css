@@ -475,6 +475,18 @@
     #banner #titre{
         font-size: 2em;
     }
+    #login form{
+        width: 90% !important;
+    }
+    #login form>*{
+        margin-bottom: 5px;
+    }
+    #login form .btn{
+        width: 100%;
+    }
+    #books-slide .book{
+        height: 60vw;
+    }
 }
 div.btn-div{
     height: 30px;
