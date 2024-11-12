@@ -56,6 +56,10 @@
     }
     #banner .flex-div>#flex-3{
         margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     #banner .flex-div #flex-1 h1#titre, #banner .flex-div #flex-1 h5, #banner .flex-div #flex-1 .btn-g{
         text-align: center !important;
