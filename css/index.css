@@ -11,16 +11,16 @@
 }
 #banner .flex-div{
     display: flex;
+    flex-direction: row-reverse;
     height: 100%;
-    padding: 0 5%;
+    padding: 5%;
     gap: 20px;
     align-items: center;
     position: relative;
 }
 #banner .flex-div>#flex-1{
     flex: 1;
-    margin-top: 50px;
-    padding: 20px;
+    padding: 20px 0px;
     height: min-content;
 }
 #banner .flex-div>#flex-2{
@@ -29,12 +29,10 @@
     padding: 20px;
 }
 #banner .flex-div #flex-1 h1#titre, #banner .flex-div #flex-1 h5, #banner .flex-div #flex-1 .btn-g{
-    text-align: center !important;
-    margin-left: auto;
-    margin-right: auto; 
+    text-align: start !important;
 }
 #banner .flex-div #flex-1 .btn-g{
-    margin-bottom: 30px;
+    margin-bottom: 0px;
 }
 @media screen and (max-width : 740px) {
     #banner .flex-div #flex-2{
@@ -49,9 +47,35 @@
         margin-left: auto;
         margin-right: auto;
     }
+    .flex-div{
+        flex-direction: column-reverse;
 
-    
+    }
+    #banner .flex-div>#flex-1{
+        margin-top: 0;
+    }
+    #banner .flex-div>#flex-3{
+        margin-top: 30px;
+    }
+    #banner .flex-div #flex-1 h1#titre, #banner .flex-div #flex-1 h5, #banner .flex-div #flex-1 .btn-g{
+        text-align: center !important;
+        margin-left: auto;
+        margin-right: auto; 
+    }
+    #banner .flex-div{
+        display: flex;
+        flex-direction: column-reverse;
+        height: 100%;
+        padding: 0 5%;
+        gap: 20px;
+        align-items: center;
+        position: relative;
+    }
+    #banner .flex-div #flex-1 .btn-g{
+        margin-bottom: 30px;
+    }
 }
+
 #banner .flex-div #flex-2 i{
     position: absolute;
     top: 10%;
@@ -79,9 +103,8 @@
 
 #banner h5{
     /* font-style: italic; */
-    width: 50%;
     font-size: 1em;
-    text-align: center;
+    text-align: start;
     &::before,&::after{
         content: "''";
         padding: 5px;
@@ -315,49 +338,35 @@
     flex-direction: column;
     overflow: hidden;
     position: relative;
-    &::before,&::after{
-        height: 100%;
-        width: 50px;
-        background-color: #ffffff;
-        position: absolute;
-        content: "";
-        z-index: 2;
-    }
-    &::before{
-        left: 0;
-        box-shadow: rgb(255 255 255) 20px 1px 20px 7px;
-    }
-    &::after{
-        right: 0;
-        box-shadow: rgb(255 255 255) -20px 0px 20px 7px;
-    }
+    padding: 0 10% !important;
 }
 #reviews #review-card{
     display: flex;
-    width: max-content;
-    &:hover .crd{
-        animation-play-state: paused;
-    }
+    align-items: stretch;
+
 }
 #reviews .crd{
-    background-color: white;
-    font-size: 0.8em;
+    background: url(../images/General\ images/bg.jpg) no-repeat center; 
+    background-size: cover;
+    color: black;
     transition: all 0.2s ease-in-out;
     cursor: pointer;
-    border: 1px solid #646464;
-    width: 300px;
-    height: min-content;
+    flex: 1;
     margin: 10px;
     /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
-    animation-name: reviews-an;
-    animation-duration: 15s;
-    animation-iteration-count: infinite;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     &:hover{
         transform: scale(1.1);
     }
 }
-#reviews .crd p::before, #reviews .crd p::after{
-    content: "''";
+#reviews #review-card hr{
+    margin-top: auto;
+}
+#reviews .crd p.text-end, #reviews .crd p{
+    padding: 0 !important;
+    margin-bottom: 0 !important;
 }
 #reviews .crd .client{
     display: flex;
@@ -384,7 +393,16 @@
     }
     
 }
-
+@media screen and (max-width : 768px) {
+    #reviews #review-card{
+        display: flex;
+        flex-direction: column;
+    }
+    #reviews{
+        padding: 0 !important;
+    }
+    
+}
 
 
 
@@ -517,4 +535,31 @@ div.btn-div{
 }
 #login form .btn{
     width: 100%;
+}
+
+
+
+div.quote{
+    border-radius: 10px;
+    color: #efefef;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
+div.quote .author{
+    color: #c1c1c1;
+    &::before{
+        content: " - ";
+    }
+}
+div.image:nth-child(1){
+    background-color: #20d800;
+    border-radius: 10px;
+    background: url(../images/General\ images/1.jpg) no-repeat center;
+    background-size: cover;
+}
+div.image:nth-child(2){
+    background-color: #20d800;
+    border-radius: 10px;
+    background: url(../images/General\ images/3.jpg) no-repeat center;
+    background-size: cover;
 }
