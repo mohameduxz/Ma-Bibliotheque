@@ -453,6 +453,14 @@
 #subscribe form .btn{
     border-radius: 0px 8px 8px 0px;
 }
+@media screen and (max-width : 768px) {
+    #subscribe{
+        height: 50vh !important;   
+    }
+    #subscribe>p#contenue, #subscribe>form{
+        width: 90% !important;
+    }
+}
 div.btn-div{
     height: 30px;
     margin:50px 0px;
