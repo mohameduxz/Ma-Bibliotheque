@@ -121,16 +121,7 @@
     height: 40vh;
 
 }
-#banner #anim-books .book{
-    height: 100%;
-    width: 150px;
-    border-radius: 10px;
-    background-color: aqua;
-    margin: 0px 10px;
-    animation-name: scroll;
-    animation-duration: 5s;
-    animation-iteration-count: infinite;
-}
+
 #get-started{
     background-color: #03045e;
     padding: 10px 30px;
@@ -506,7 +497,7 @@ div.btn-div{
 
 
 #login:popover-open{
-    position: absolute;
+    position: fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -578,4 +569,55 @@ div.image:nth-child(2){
     text-decoration: none;
     color: white;
 
+}
+
+#books-slide .book img{
+    width: 100%;
+}
+#books-slide:hover .book{
+    filter: blur(10px);
+}
+#books-slide .book{
+    transition: all 0.2s ease-in-out;
+    margin: 10px;
+    height: 40vh;
+    display: flex;
+    align-content: end;
+    justify-content: end;
+    padding: 0 !important;
+    flex-direction: column;
+    overflow: hidden;
+    font-size: 0.8em;
+    border-radius: 15px;
+    cursor: pointer;
+    &:hover{
+        transform: scale(1.1);
+        filter: blur(0px);
+    }
+    &:hover .book-info{
+        transform: translateY(0);
+    }
+}
+#books-slide .book .book-info{
+    width: 100%;
+    height: min-content;
+    color: aliceblue;
+    background: linear-gradient(183deg, rgba(0,0,0,0) 10%, rgba(0,0,0,1) 100%);
+    transform: translateY(100%);
+    transition: all 200ms ease-in;
+    padding: 5px;
+}
+#books-slide .book .book-info>*{
+    margin: 0 !important;
+}
+#books-slide .book .book-info>p{
+    color: #e7e7e7;
+}
+#books-slide .book .book-info .linked{
+    background-color: white;
+    color: black;
+    padding: 5px 20px;
+    border-radius: 50px;
+    width: 100%;
+    margin-top: 5px !important;
 }
